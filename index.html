@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+        }
+        .navbar {
+            background-color: #000000; /* Black navbar */
+        }
+        .navbar-brand {
+            color: #ffffff !important; /* White text for brand */
+        }
+        .nav-link {
+            color: #ffffff !important; /* White text for nav links */
+        }
+        footer {
+            background-color: #000000; /* Black footer */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .custom-file-input {
+            color: transparent;
+        }
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+        .custom-file-input::before {
+            content: 'Choose file';
+            display: inline-block;
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            outline: none;
+            white-space: nowrap;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        .custom-file-input:hover::before {
+            background: #0056b3;
+        }
+        .custom-file-input:active::before {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Resume Analyzer</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="pdf-file" accept=".pdf">
+            <label class="custom-file-label" for="pdf-file">Choose PDF file</label>
+        </div>
+        <button class="btn btn-primary mt-2" onclick="analyzeResume()">Analyze Resume</button>
+        <div id="advantages" class="mt-3"></div>
+        <div id="disadvantages"></div>
+
+        <div class="mt-3">
+            <p>The resume is your first impression on a potential employer. It highlights your skills, experiences, and qualifications, showcasing why you're the ideal candidate for the job.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Resume Analyzer</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
